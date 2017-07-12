@@ -49,12 +49,12 @@ while True:
     time.sleep(2)
     print("OK, i have my guess.")
 
-    answer = input("Please enter the number of letters your word has: ")    # get the number of letters from the user
-    if answer.isdecimal():                      # catching unexpected input
-        answer = int(answer)            # storing the number as an integer
+    answer = input("Please enter your word: ")    # get the word from the user
+    if answer.isalpha():                      # catch unexpected input
+        answer = len(answer)            # assign the number of letters in the word
     else:
-        print("That's not a whole number. You broke it, please try again.")
-        continue
+        print("That's not a proper word. You broke it. exiting...")
+        break
 
     if answer%2 == 0:       # check and assign answer
         answer = "even"
